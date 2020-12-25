@@ -12,30 +12,27 @@ public class PlayerController : MonoBehaviour
     private bool quickly = true;
     public float boost;
 
+
     public float jumpForce;
+
     bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
 
-
     private Rigidbody2D rigidBody;
+
+
     // Use this for initialization
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
     }
-
-
- /*   void Jump()
-    {
-        rigidBody.velocity = Vector2.up * jumpForce;
-    }*/
-
-
+   
     // Update is called once per frame
     void Update()
     {
+ 
         if (movement > 0f)
         {
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
@@ -54,17 +51,16 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(speed + boost, rigidBody.velocity.y);
         }
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
 
-       isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
-            if(isGrounded)
+            if (isGrounded == true)
             {
-                rigidBody.velocity = Vector2.up * jumpForce;
+                rigidBody.AddForce(Vector2.up * jumpForce);
 
-               
             }
         }
     }
+
 }
