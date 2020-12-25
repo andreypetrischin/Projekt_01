@@ -10,6 +10,6 @@ public class MoveTrailUp : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
+        transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
     }
 }
