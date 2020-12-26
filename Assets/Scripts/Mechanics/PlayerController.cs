@@ -5,34 +5,35 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed;
-    public float movement;
-    private bool slow = true;
-    public float brake;
-    private bool quickly = true;
-    public float boost;
 
+    //Jump
 
     public float jumpForce;
-
-    bool isGrounded;
+    private Rigidbody2D rigidBody;
+   
     public Transform groundCheck;
     public LayerMask groundLayer;
 
 
-    private Rigidbody2D rigidBody;
 
 
-    // Use this for initialization
+
+    //Move
+    public float speed;
+    public float movement;
+    private bool slow = false;
+    public float brake;
+    private bool quickly = false;
+    public float boost;
+
+
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
     }
-   
-    // Update is called once per frame
     void Update()
     {
- 
         if (movement > 0f)
         {
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
@@ -51,16 +52,54 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(speed + boost, rigidBody.velocity.y);
         }
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
 
-        if (Input.GetKey(KeyCode.LeftControl))
+       
+
+
+        if (Input.GetButtonDown("Jump"))
         {
-            if (isGrounded == true)
-            {
-                rigidBody.AddForce(Vector2.up * jumpForce);
-
-            }
+            Debug.Log("Jump");
+           
+                Jump();
+         
         }
+     
     }
 
+
+    bool IsGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public void Jump()
+    {
+        if (!IsGrounded())
+        {
+            return;
+        }
+        else
+        {
+
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+     
+    }
 }
+
+
+
+   
+
+
