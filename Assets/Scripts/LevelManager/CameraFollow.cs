@@ -3,6 +3,7 @@
 public class CameraFollow : MonoBehaviour
 { 
     public Transform target;
+   
 
      float nextTimeToSearch;
 
@@ -17,6 +18,8 @@ public class CameraFollow : MonoBehaviour
         Vector3 position = transform.position;
         position.x = target.transform.position.x;
         transform.position = position;
+
+        
     }
 
     void FindPlayer()

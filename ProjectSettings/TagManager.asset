@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - GM
+  - Bullet
+  - Pit
   layers:
   - Default
   - TransparentFX

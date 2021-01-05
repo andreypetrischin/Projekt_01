@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelManager : MonoBehaviour
+{
+    public GameObject currentCheckpoint;
+
+    private PlayerController player;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+
+    public void RespownPlayer()
+    {
+        Debug.Log("Player " + player);
+        player.transform.position = currentCheckpoint.transform.position;
+    }
+}

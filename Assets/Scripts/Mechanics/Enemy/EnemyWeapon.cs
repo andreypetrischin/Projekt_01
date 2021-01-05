@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class EnemyWeapon : MonoBehaviour
 {
-
     public float fireRate = 0;
     public float damage = 1;
     public LayerMask notToHit;
@@ -12,7 +11,7 @@ public class Weapon : MonoBehaviour
     public float timeToSpawnEffect;
     public float effectSpawnRate;
 
-    
+
 
 
     public Transform BulletTrailPrefab;
@@ -20,7 +19,7 @@ public class Weapon : MonoBehaviour
 
     float timeToFire = 0;
     Transform firePoint;
-      void Awake()
+    void Awake()
     {
         firePoint = transform.Find("FirePoint");
         if (firePoint == null)
@@ -31,29 +30,15 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (fireRate == 0)
-        {
-            if(Input.GetKeyDown(KeyCode.LeftAlt))
-            {
-                Shoot();
-            }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.LeftAlt) && Time.time > timeToFire)
-            {
-                timeToFire = Time.time + 1 / fireRate;
-                Shoot();
-            }
-        }
+        Shoot();
     }
 
     void Shoot()
     {
         Vector2 endPosition = new Vector2(firePoint.position.y, firePoint.position.x);
         Vector2 firePointPosition = new Vector2(firePoint.position.y, firePoint.position.x);
-        RaycastHit2D hit = Physics2D.Raycast(firePointPosition, endPosition - firePointPosition, shootDistance, notToHit );
-        if(Time.time > timeToSpawnEffect)
+        RaycastHit2D hit = Physics2D.Raycast(firePointPosition, endPosition - firePointPosition, shootDistance, notToHit);
+        if (Time.time > timeToSpawnEffect)
         {
             Effect();
             timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
@@ -65,14 +50,10 @@ public class Weapon : MonoBehaviour
             Debug.DrawLine(firePointPosition, hit.point, Color.red);
             Debug.Log("We hit" + hit.collider.name + " and did" + damage + " damage");
         }
-    }    
-
-    void Effect ()
-    {
-        Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
-
     }
 
-    
-
+    void Effect()
+    {
+        Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+    }
 }
