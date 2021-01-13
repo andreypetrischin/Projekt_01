@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
-
     //Jump
 
     public float jumpForce;
     private Rigidbody2D rigidBody;
-   
+
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -21,16 +20,19 @@ public class PlayerController : MonoBehaviour
     public float brake;
 
 
-    public  float healthAmount;
+    public float healthAmount;
+
+    Vector3 startPos;
 
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+       
     }
     void Update()
     {
-        Move();
+      // Move();
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -43,36 +45,41 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+                Jump();
 
-            Jump();
+            Debug.Log("Jump");
         }
+    }
 
-
-        if (healthAmount <= 0)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene("SampleScene");
-        }
-
-        }
     void Move()
     {
-       
-            rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
-        
+        rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
     }
 
 
     void SpeedUp()
     {
-        rigidBody.velocity = new Vector2(speed + boost, rigidBody.velocity.y);
-    }
+        if (!IsGrounded())
+        {
+            return;
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(boost, 0f), ForceMode2D.Impulse);
 
+        }
+    }
     void SpeedDown()
     {
-        rigidBody.velocity = new Vector2 (speed - brake, rigidBody.velocity.y);
+        if (!IsGrounded())
+        {
+            return;
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-brake, 0f), ForceMode2D.Impulse);
+        }
     }
-
     bool IsGrounded()
     {
         Vector2 position = transform.position;
@@ -87,8 +94,7 @@ public class PlayerController : MonoBehaviour
 
         return false;
     }
-
-     void Jump()
+    void Jump()
     {
         if (!IsGrounded())
         {
@@ -96,17 +102,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+         //   rigidBody.velocity = Vector2.up * jumpForce;
+               gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
-    }
-
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.name.Equals("Pit"))
-            healthAmount -= 11f;
-        if (col.gameObject.name.Equals("FirePoint"))
-            healthAmount -= 11f;
     }
 }
 

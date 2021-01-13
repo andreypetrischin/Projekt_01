@@ -18,13 +18,11 @@ public class Move : MonoBehaviour
         transform.position = waypoints[waypointIndex].transform.position;
       
     }
-
     // Update is called once per frame
     void Update()
     {
         MoveIt();
     }
-
     private void MoveIt()
     {
         transform.position = Vector2.MoveTowards(transform.position,
@@ -35,7 +33,6 @@ public class Move : MonoBehaviour
         {
             waypointIndex += 1;
         }
-
         if (waypointIndex == waypoints.Length)
         {
             waypointIndex = 0;

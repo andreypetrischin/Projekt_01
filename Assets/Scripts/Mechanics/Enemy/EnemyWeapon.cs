@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour
 {
-    public float fireRate = 0;
+    public float fireRate;
     public float damage = 1;
     public LayerMask notToHit;
     public float shootDistance;
@@ -17,11 +17,11 @@ public class EnemyWeapon : MonoBehaviour
     public Transform BulletTrailPrefab;
 
 
-    float timeToFire = 0;
+   // float timeToFire = 0;
     Transform firePoint;
     void Awake()
     {
-        firePoint = transform.Find("FirePoint");
+        firePoint = transform.Find("Bullet");
         if (firePoint == null)
         {
             Debug.LogError("No fire Point");

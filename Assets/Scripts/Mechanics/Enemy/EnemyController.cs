@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float helth;
 
+    private float Healt = 1f;
 
     private void Update()
     {
-        if (helth <= 0)
+        if(Healt<=0)
+        {
             Destroy(gameObject);
+        }
     }
 
-
-    void OnTriggerEnter2D(Collider2D col)
+   /* private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (col.gameObject.name.Equals("FirePoint"))
-            helth -= 11f;
+       if(collision.gameObject.tag == "Bullet")
+        {
+           
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            Debug.Log("WORK");
+        }
+    }*/
+
+   void Damage(float damage)
+    {
+
+        Healt -= damage;
     }
 }
