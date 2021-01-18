@@ -9,6 +9,7 @@ public class DestroyObject : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
+            ScoreScript.scoreValue += 150;
             Destroy(collision.gameObject);
         }
     }

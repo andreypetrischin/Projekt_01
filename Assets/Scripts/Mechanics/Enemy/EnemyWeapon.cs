@@ -11,7 +11,8 @@ public class EnemyWeapon : MonoBehaviour
     public float timeToSpawnEffect;
     public float effectSpawnRate;
 
-
+ //   private float fireRate = 2f;
+    private float nextFire = 4f;
 
 
     public Transform BulletTrailPrefab;
@@ -30,7 +31,10 @@ public class EnemyWeapon : MonoBehaviour
 
     void Update()
     {
-        Shoot();
+        if (Time.time > nextFire)
+        {
+            Shoot();
+        }
     }
 
     void Shoot()
@@ -44,12 +48,7 @@ public class EnemyWeapon : MonoBehaviour
             timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
         }
 
-        Debug.DrawLine(firePointPosition, (endPosition - firePointPosition) * shootDistance, Color.cyan);
-        if (hit.collider != null)
-        {
-            Debug.DrawLine(firePointPosition, hit.point, Color.red);
-            Debug.Log("We hit" + hit.collider.name + " and did" + damage + " damage");
-        }
+       
     }
 
     void Effect()

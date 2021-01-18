@@ -18,13 +18,13 @@ public class FireWithDelay : MonoBehaviour
     private Transform barrelup;
 
 
-    private float bulletSpeed = 500f;
+    public float bulletSpeed;
 
-    private float fireRate = 2f;
-    private float nextFire = 0f;
+    public float fireRate;
+    public float nextFire;
 
-    private float fireRateUp = 0.5f;
-    private float nextFireUp = 0f;
+    public float fireRateUp;
+    public float nextFireUp;
 
 
     void Update()

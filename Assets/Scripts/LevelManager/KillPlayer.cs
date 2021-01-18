@@ -5,27 +5,26 @@ using UnityEngine;
 public class KillPlayer : MonoBehaviour
 {
     public LevelManager levelManager;
+    public Ground ground;
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
-       
+        ground = FindObjectOfType<Ground>();
+;       
     }
     
     void Update()
     {
     }
-/*    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.name == "Player")
-        {
-            levelManager.RespownPlayer();
-        }*/
     
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name == "Player")
+        if (other.name == "Player" )
         {
-            levelManager.RespownPlayer();
+            LiveScript.liveValue -= 1; 
+            /*levelManager.RespownPlayer();
+            levelManager.RespawnRoad(); */
+          
         }
     }
 }

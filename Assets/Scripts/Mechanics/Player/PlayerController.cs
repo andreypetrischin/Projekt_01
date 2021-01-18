@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-      // Move();
+       Move();
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            ScoreScript.scoreValue += 50;
          //   rigidBody.velocity = Vector2.up * jumpForce;
                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }

@@ -25,6 +25,8 @@ public class CheckPoint : MonoBehaviour
             levelManager.currentCheckpoint = gameObject;
             Debug.Log("CheckPoint");
 
+            
+
         }
     }
 }
