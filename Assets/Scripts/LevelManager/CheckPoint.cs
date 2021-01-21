@@ -5,7 +5,9 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     public LevelManager levelManager;
-   
+
+   public Vector3 CheckpointPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,12 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.name == "Player")
         {
+           // CheckpointPosition = transform.position = new Vector3(transform.position.x, 0f, 0f);
             levelManager.currentCheckpoint = gameObject;
-            Debug.Log("CheckPoint");
+            Debug.Log(gameObject.name);
+            Debug.Log(CheckpointPosition);
 
-            
+
 
         }
     }

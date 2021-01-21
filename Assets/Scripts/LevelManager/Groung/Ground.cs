@@ -9,17 +9,24 @@ public class Ground : MonoBehaviour
     public bool moveLeft = true;
     public LevelManager levelManager;
 
-    public Vector2 road;
+    Vector3 GroundPos;
+  
     private void Start()
     {
+        
         levelManager = FindObjectOfType<LevelManager>();
     }
     // Update is called once per frame
     void Update()
     {
+       
         if (moveLeft == true)
         {
-           road =   transform.position += transform.right * -moveSpeed * Time.deltaTime;
+            GroundPos = transform.position += transform.right * -moveSpeed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, 0f, 0f);
+
+         
+
         }
     }
 }

@@ -6,6 +6,10 @@ public class KillPlayer : MonoBehaviour
 {
     public LevelManager levelManager;
     public Ground ground;
+    public GameObject prefab;
+    Animation anim;
+
+
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
@@ -21,9 +25,14 @@ public class KillPlayer : MonoBehaviour
     {
         if (other.name == "Player" )
         {
-            LiveScript.liveValue -= 1; 
-            /*levelManager.RespownPlayer();
-            levelManager.RespawnRoad(); */
+           /* GameObject obj = Instantiate(prefab) as GameObject;
+            anim = obj.GetComponent<Animation>();*/
+            LiveScript.liveValue -= 1;
+
+
+          
+          //  levelManager.RespawnRoad();
+         
           
         }
     }

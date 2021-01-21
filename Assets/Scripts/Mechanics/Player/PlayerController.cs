@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
+    public GameObject prefab;
+    Animation anim;
+
     //Jump
 
     public float jumpForce;
@@ -20,7 +23,10 @@ public class PlayerController : MonoBehaviour
     public float brake;
 
 
-    public float healthAmount;
+    public int HealthPoints = 3;
+
+
+    private Ground ground;
 
     Vector3 startPos;
 
@@ -28,7 +34,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-       
+        ground = FindObjectOfType<Ground>();
+
     }
     void Update()
     {

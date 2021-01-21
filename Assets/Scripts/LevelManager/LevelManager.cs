@@ -10,8 +10,10 @@ public class LevelManager : MonoBehaviour
     public bool CanPause;
     private Vector3 spawnPosition;
 
+    private Ground ground;
 
-    public Ground ground;
+    private CameraPosition cameraPos;    
+    
    
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class LevelManager : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
 
         ground = FindObjectOfType<Ground>();
+        cameraPos = FindObjectOfType<CameraPosition>();
 
     }
     // Update is called once per frame
@@ -48,18 +51,33 @@ public class LevelManager : MonoBehaviour
     public void RespownPlayer()
     {
 
-      //  SceneManager.LoadScene("SampleScene");
+        ground.moveLeft = true;
+        //  SceneManager.LoadScene("SampleScene");
         this.player.transform.position = currentCheckpoint.transform.position;
-        Debug.Log("Player " + player);
-       // Instantiate(player);
         
+        Debug.Log("Player " + player);
+        // Instantiate(player);
+
+       
 
 
+        
     }
 
     public void RespawnRoad()
     {
-        ground.road = currentCheckpoint.transform.position;
+
+        // SceneManager.LoadScene("SampleScene");
+        this.player.transform.position = currentCheckpoint.transform.position;
+       // this.ground.transform.position = currentCheckpoint.transform.position;
+        Vector3 position = transform.position;
+        position.y = 0;
        
     }
+
+    public void RespawnCamera()
+    {
+        this.cameraPos.transform.position = currentCheckpoint.transform.position;
+    }    
+   
 }

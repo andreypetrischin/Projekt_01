@@ -41,6 +41,7 @@ public class FireWithDelay : MonoBehaviour
             nextFireUp = Time.time + fireRateUp;
             var spawnedBulletUp = Instantiate(bulletUp, barrelup.position, barrelup.rotation);
             spawnedBulletUp.AddForce(barrelup.up * bulletSpeed);
+           // Destroy(spawnedBulletUp, 2f);
 
         }
        /* if (Vector2.Distance(transform.position, bullet.transform.position)> 1)
