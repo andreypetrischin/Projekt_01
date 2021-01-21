@@ -31,7 +31,7 @@ public class KillPlayer : MonoBehaviour
 
 
           
-          //  levelManager.RespawnRoad();
+            levelManager.RespawnRoad();
          
           
         }
