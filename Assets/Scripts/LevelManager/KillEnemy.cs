@@ -8,6 +8,7 @@ public class KillEnemy : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals ("Bullet"))
         {
+            SaundManagerScript.PlaySound("enemyDeath");
             ScoreScript.scoreValue += 200;
             Destroy(collision.gameObject);
             Destroy(gameObject);

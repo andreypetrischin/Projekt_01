@@ -25,12 +25,8 @@ public class KillPlayer : MonoBehaviour
     {
         if (other.name == "Player" )
         {
-           /* GameObject obj = Instantiate(prefab) as GameObject;
-            anim = obj.GetComponent<Animation>();*/
+            SaundManagerScript.PlaySound("playerHit");
             LiveScript.liveValue -= 1;
-
-
-          
             levelManager.RespawnRoad();
          
           

@@ -18,6 +18,8 @@ public class LiveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        X.text = "- " + liveValue;
+        X.text = " " + liveValue;
+  
     }
+    
 }

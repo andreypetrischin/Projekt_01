@@ -31,23 +31,22 @@ public class FireWithDelay : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.LeftAlt) && Time.time > nextFire)
         {
+            SaundManagerScript.PlaySound("fire");
             nextFire = Time.time + fireRate;
             var spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
             spawnedBullet.AddForce(barrel.right * bulletSpeed);
             Destroy(spawnedBullet, 1f);
+            
         }
         if (Input.GetKeyDown(KeyCode.LeftAlt) && Time.time > nextFireUp)
         {
+            SaundManagerScript.PlaySound("fire");
+
             nextFireUp = Time.time + fireRateUp;
             var spawnedBulletUp = Instantiate(bulletUp, barrelup.position, barrelup.rotation);
             spawnedBulletUp.AddForce(barrelup.up * bulletSpeed);
-           // Destroy(spawnedBulletUp, 2f);
+            
 
         }
-       /* if (Vector2.Distance(transform.position, bullet.transform.position)> 1)
-        {
-            Destroy(bullet);
-            Debug.Log("Destruyed");
-        }*/
     }
 }
