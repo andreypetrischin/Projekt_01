@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+
     public void NewGameBtn( string newGameLevel)
     {
-                SceneManager.LoadScene("SampleScene");
-     }
+        LiveScript.liveValue = 2;
+        ScoreScript.scoreValue = 0;
+        AudioListener.volume = 1;
+        SceneManager.LoadScene("SampleScene");
+    }
 
     public void ExitGame (string exitGame)
     {

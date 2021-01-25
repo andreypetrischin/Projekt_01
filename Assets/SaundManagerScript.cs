@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaundManagerScript : MonoBehaviour
 {
 
-    public static AudioClip playHitSound, FireSound, FireSoundUp, jumpSound, enemyDeathSound, levelCompleted;
+    public static AudioClip playHitSound, FireSound, FireSoundUp, jumpSound, enemyDeathSound, levelCompleted, gameOver;
     public static AudioSource audioSrc;
 
 
@@ -19,7 +19,7 @@ public class SaundManagerScript : MonoBehaviour
         
         enemyDeathSound = Resources.Load<AudioClip>("Hit_rock");
         levelCompleted = Resources.Load<AudioClip>("LevelComp");
-
+        gameOver = Resources.Load<AudioClip>("Game_over");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -50,6 +50,17 @@ public class SaundManagerScript : MonoBehaviour
             case "LevelComp":
                 audioSrc.PlayOneShot(levelCompleted);
                 break;
+            case "GameOver":
+                audioSrc.PlayOneShot(gameOver);
+                break;
         }
+
+
+        
+    }
+
+    public static void StopSound(string clip)
+    {
+        audioSrc.Stop();
     }
 }
