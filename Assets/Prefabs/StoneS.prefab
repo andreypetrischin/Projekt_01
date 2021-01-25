@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
   ground: {fileID: 0}
+  FireworksAll: {fileID: 2959303508984740850, guid: 105cb48a8844d5942bb760a43e3ffb8a,
+    type: 3}
 --- !u!61 &9098979073578250579
 BoxCollider2D:
   m_ObjectHideFlags: 0

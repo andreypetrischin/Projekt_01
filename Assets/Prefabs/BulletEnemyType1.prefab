@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 731e92a202b17b04bb3399780acfa4b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47888a5f03cf5864eb42dd254eb7efe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,8 +98,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 7
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -136,7 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
   ground: {fileID: 0}
-  prefab: {fileID: 0}
 --- !u!114 &-6289682112812129679
 MonoBehaviour:
   m_ObjectHideFlags: 0

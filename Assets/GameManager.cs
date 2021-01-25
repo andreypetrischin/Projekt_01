@@ -5,34 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    bool gameHasEnded = false;
-
-
     public GameObject completeLevelUI;
-
-    public float restartDelay = 2f;
-
-
-
+    public GameObject restartExitUi;
+    
     public void CompleteLevel()
     {
         completeLevelUI.SetActive(true);
     }
 
-    public void EndGame()
+    public void RestartExitUI()
     {
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("Game Over");
-            Invoke("Restart", restartDelay);
-        }
+        restartExitUi.SetActive(true);
     }
-
-    private void Restart()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
-   
 }

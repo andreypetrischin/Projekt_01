@@ -125,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
   ground: {fileID: 0}
+  FireworksAll: {fileID: 2959303508984740850, guid: 105cb48a8844d5942bb760a43e3ffb8a,
+    type: 3}
 --- !u!50 &32390652374168444
 Rigidbody2D:
   serializedVersion: 4

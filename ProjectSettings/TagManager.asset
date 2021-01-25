@@ -10,6 +10,7 @@ TagManager:
   - Pit
   - Enemy
   - Audio
+  - Restart
   layers:
   - Default
   - TransparentFX

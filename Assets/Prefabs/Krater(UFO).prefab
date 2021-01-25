@@ -42,6 +42,12 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.68
       objectReference: {fileID: 0}
+    - target: {fileID: 32390652374168441, guid: 41b6b828b05e8d5498eaab816a30ef99,
+        type: 3}
+      propertyPath: FireworksAll
+      value: 
+      objectReference: {fileID: 2959303508984740850, guid: 105cb48a8844d5942bb760a43e3ffb8a,
+        type: 3}
     - target: {fileID: 32390652374168442, guid: 41b6b828b05e8d5498eaab816a30ef99,
         type: 3}
       propertyPath: m_RootOrder
@@ -116,7 +122,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8ebaaf33e17cf894ea3192a2f799183b,
+      objectReference: {fileID: 21300000, guid: 745cbb8f41c20f2428ff46b970e011e9,
         type: 3}
     - target: {fileID: 32390652374168444, guid: 41b6b828b05e8d5498eaab816a30ef99,
         type: 3}
