@@ -12,9 +12,9 @@ public class LevelManager : MonoBehaviour
 
     private Ground ground;
 
-    private CameraPosition cameraPos;    
-    
-   
+    private CameraPosition cameraPos;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
                 CanPause = true;
             }
         }
-       
+
     }
     public void RespownPlayer()
     {
@@ -54,14 +54,14 @@ public class LevelManager : MonoBehaviour
         ground.moveLeft = true;
         //  SceneManager.LoadScene("SampleScene");
         this.player.transform.position = currentCheckpoint.transform.position;
-        
+
         Debug.Log("Player " + player);
         // Instantiate(player);
 
-       
 
 
-        
+
+
     }
 
     public void RespawnRoad()
@@ -69,15 +69,15 @@ public class LevelManager : MonoBehaviour
 
         // SceneManager.LoadScene("SampleScene");
         this.player.transform.position = currentCheckpoint.transform.position;
-       // this.ground.transform.position = currentCheckpoint.transform.position;
+        // this.ground.transform.position = currentCheckpoint.transform.position;
         Vector3 position = transform.position;
         position.y = 0;
-       
+
     }
 
     public void RespawnCamera()
     {
         this.cameraPos.transform.position = currentCheckpoint.transform.position;
-    }    
-   
+    }
 }
+   

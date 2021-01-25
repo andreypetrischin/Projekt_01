@@ -2,24 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LiveScript : MonoBehaviour
 {
-    public static int liveValue = 2;
-    Text X;
+    public GameObject parent;
+    GameObject backgroundAudio;
+   
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        backgroundAudio = GameObject.Find("BackgroundAudio");
+    }
+    public static int liveValue = 2;
+    Text Live;
     void Start()
     {
-        X = GetComponent<Text>();
-
+        Live = GetComponent<Text>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        X.text = " " + liveValue;
-  
+        Live.text = " " + liveValue;
+
+        if(liveValue < 0)
+        {
+            backgroundAudio.SetActive(false);
+            SaundManagerScript.PlaySound("GameOver");
+           
+            parent.transform.GetChild(0).gameObject.SetActive(true);
+            AudioListener.volume = 0;
+        }
     }
-    
+   
 }

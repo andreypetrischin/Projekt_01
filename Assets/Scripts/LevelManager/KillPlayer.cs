@@ -6,8 +6,7 @@ public class KillPlayer : MonoBehaviour
 {
     public LevelManager levelManager;
     public Ground ground;
-    public GameObject prefab;
-    Animation anim;
+
 
 
     void Start()
@@ -16,7 +15,6 @@ public class KillPlayer : MonoBehaviour
         ground = FindObjectOfType<Ground>();
 ;       
     }
-    
     void Update()
     {
     }
@@ -25,11 +23,13 @@ public class KillPlayer : MonoBehaviour
     {
         if (other.name == "Player" )
         {
+        
             SaundManagerScript.PlaySound("playerHit");
             LiveScript.liveValue -= 1;
             levelManager.RespawnRoad();
-         
           
+
+
         }
     }
 }

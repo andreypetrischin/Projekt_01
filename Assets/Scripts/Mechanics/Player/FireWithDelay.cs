@@ -27,6 +27,8 @@ public class FireWithDelay : MonoBehaviour
     public float nextFireUp;
 
 
+
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.LeftAlt) && Time.time > nextFire)
@@ -36,7 +38,6 @@ public class FireWithDelay : MonoBehaviour
             var spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
             spawnedBullet.AddForce(barrel.right * bulletSpeed);
             Destroy(spawnedBullet, 1f);
-            
         }
         if (Input.GetKeyDown(KeyCode.LeftAlt) && Time.time > nextFireUp)
         {
@@ -45,8 +46,6 @@ public class FireWithDelay : MonoBehaviour
             nextFireUp = Time.time + fireRateUp;
             var spawnedBulletUp = Instantiate(bulletUp, barrelup.position, barrelup.rotation);
             spawnedBulletUp.AddForce(barrelup.up * bulletSpeed);
-            
-
         }
     }
 }
