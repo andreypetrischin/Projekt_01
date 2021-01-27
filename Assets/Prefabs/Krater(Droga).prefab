@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 8ebaaf33e17cf894ea3192a2f799183b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02bd4a2cb36483943a22fc785ed6739f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
   ground: {fileID: 0}
+  PlayerDestroyEffect: {fileID: 2959303508969759382, guid: 105cb48a8844d5942bb760a43e3ffb8a,
+    type: 3}
 --- !u!61 &1234154383950521059
 BoxCollider2D:
   m_ObjectHideFlags: 0

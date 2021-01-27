@@ -14,13 +14,13 @@ public class LevelManager : MonoBehaviour
 
     private CameraPosition cameraPos;
 
+  
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-
         ground = FindObjectOfType<Ground>();
         cameraPos = FindObjectOfType<CameraPosition>();
 
@@ -46,32 +46,27 @@ public class LevelManager : MonoBehaviour
                 CanPause = true;
             }
         }
-
     }
     public void RespownPlayer()
     {
-
         ground.moveLeft = true;
         //  SceneManager.LoadScene("SampleScene");
         this.player.transform.position = currentCheckpoint.transform.position;
-
         Debug.Log("Player " + player);
         // Instantiate(player);
-
-
-
-
-
     }
 
     public void RespawnRoad()
     {
-
         // SceneManager.LoadScene("SampleScene");
         this.player.transform.position = currentCheckpoint.transform.position;
         // this.ground.transform.position = currentCheckpoint.transform.position;
         Vector3 position = transform.position;
         position.y = 0;
+
+
+
+
 
     }
 

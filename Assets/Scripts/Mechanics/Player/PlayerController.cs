@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            ScoreScript.scoreValue += 50;
+            
             SaundManagerScript.PlaySound("jump");
                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }

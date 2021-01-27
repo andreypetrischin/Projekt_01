@@ -8,13 +8,23 @@ public class KillPlayer : MonoBehaviour
     public Ground ground;
 
 
+  
+
+   
 
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
         ground = FindObjectOfType<Ground>();
-;       
+
+     
+
+
     }
+
+  
+
+
     void Update()
     {
     }
@@ -23,13 +33,15 @@ public class KillPlayer : MonoBehaviour
     {
         if (other.name == "Player" )
         {
-        
+           
             SaundManagerScript.PlaySound("playerHit");
             LiveScript.liveValue -= 1;
             levelManager.RespawnRoad();
-          
-
 
         }
     }
+
+   
+
+
 }

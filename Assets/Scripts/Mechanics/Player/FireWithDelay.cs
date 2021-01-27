@@ -19,6 +19,7 @@ public class FireWithDelay : MonoBehaviour
 
 
     public float bulletSpeed;
+    public float bulletSpeedRight;
 
     public float fireRate;
     public float nextFire;
@@ -36,7 +37,7 @@ public class FireWithDelay : MonoBehaviour
             SaundManagerScript.PlaySound("fire");
             nextFire = Time.time + fireRate;
             var spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
-            spawnedBullet.AddForce(barrel.right * bulletSpeed);
+            spawnedBullet.AddForce(barrel.right * bulletSpeedRight);
             Destroy(spawnedBullet, 1f);
         }
         if (Input.GetKeyDown(KeyCode.LeftAlt) && Time.time > nextFireUp)

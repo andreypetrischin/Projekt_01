@@ -11,6 +11,7 @@ public class EnemyFireWithDeley : MonoBehaviour
     private Transform barrel;
     public float bulletSpeed;
     public float fireRate;
+    public float fireRatem;
     public float nextFire;
 
   
@@ -20,7 +21,7 @@ public class EnemyFireWithDeley : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time  + Random.Range(fireRate, fireRatem);
             var spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
             spawnedBullet.AddForce(barrel.right * bulletSpeed);
             Destroy(spawnedBullet, 1f);

@@ -8,13 +8,13 @@ public class LiveScript : MonoBehaviour
 {
     public GameObject parent;
     GameObject backgroundAudio;
-   
+
 
     private void Awake()
     {
         backgroundAudio = GameObject.Find("BackgroundAudio");
     }
-    public static int liveValue = 2;
+    public static int liveValue = 4;
     Text Live;
     void Start()
     {
@@ -28,10 +28,8 @@ public class LiveScript : MonoBehaviour
         {
             backgroundAudio.SetActive(false);
             SaundManagerScript.PlaySound("GameOver");
-           
             parent.transform.GetChild(0).gameObject.SetActive(true);
             AudioListener.volume = 0;
         }
     }
-   
 }

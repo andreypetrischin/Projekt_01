@@ -24,6 +24,7 @@ public class EndTrigger : MonoBehaviour
             player.enabled = false;
             backgroundAudio.SetActive(false);
             gameManager.CompleteLevel();
+            LiveScript.liveValue += 1;
         }
     }
 
