@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemySpawnControl : MonoBehaviour
 {
+
+    // For spawn enemy
+
     public Transform[] spapwnPoints;
     public GameObject[] enemys;
 
@@ -13,7 +16,6 @@ public class EnemySpawnControl : MonoBehaviour
     void Start()
     {
         spawnAllowed = true;
-        /* InvokeRepeating("SpawnEnemy", 0f, 10f);*/
     }
     void SpawnEnemy()
     {
@@ -30,8 +32,6 @@ public class EnemySpawnControl : MonoBehaviour
         {
             SpawnEnemy();
         }
-
-
     }
 }
 

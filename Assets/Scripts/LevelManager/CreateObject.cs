@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CreateObject : MonoBehaviour
 {
+    //For create new craters (Enemy Typ 3)
+
     public Quaternion MyGameObjectRotation;
     public Transform Spawnpoint;
     public GameObject Prefab;
@@ -15,7 +17,6 @@ public class CreateObject : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
-
             Instantiate(Prefab, Spawnpoint.position, Quaternion.identity);
 
             Destroy(gameObject);

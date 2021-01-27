@@ -4,29 +4,19 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
-     
+     //Ground move 
+
     public float moveSpeed;
     public bool moveLeft = true;
-    public LevelManager levelManager;
-
-    Vector3 GroundPos;
+   
   
-    private void Start()
-    {
-        
-        levelManager = FindObjectOfType<LevelManager>();
-    }
-    // Update is called once per frame
+
     void Update()
     {
-       
-        if (moveLeft == true)
+        if (moveLeft)
         {
-            GroundPos = transform.position += transform.right * -moveSpeed * Time.deltaTime;
+            Vector3 GroundPos = transform.position += transform.right * -moveSpeed * Time.deltaTime;
             transform.position = new Vector3(transform.position.x, 0f, 0f);
-
-         
-
         }
     }
 }

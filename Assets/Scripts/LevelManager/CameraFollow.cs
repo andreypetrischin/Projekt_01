@@ -9,11 +9,8 @@ public class CameraFollow : MonoBehaviour
     {
          Pos = transform.position = new Vector3(12f, 7.5f, 0f);
     }
-
-
     void Update()
     {
         transform.position = new Vector3 (player.position.x, 7.5f, 0f);
-
     }
 }
