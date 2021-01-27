@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
   ground: {fileID: 0}
-  PlayerDestroyEffect: {fileID: 2959303508969759382, guid: 105cb48a8844d5942bb760a43e3ffb8a,
+  EnemyDestroyEffect: {fileID: 2959303508969759382, guid: 105cb48a8844d5942bb760a43e3ffb8a,
     type: 3}
 --- !u!61 &1234154383950521059
 BoxCollider2D:

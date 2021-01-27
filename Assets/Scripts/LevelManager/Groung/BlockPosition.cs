@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockPosition : MonoBehaviour
 {
 
+
     //Block objects position on ground
 
     private void OnTriggerEnter2D(Collider2D other)
