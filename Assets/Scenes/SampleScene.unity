@@ -6200,8 +6200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 0}
-  seconds: 0
-  minutes: 0
 --- !u!1 &1423045496
 GameObject:
   m_ObjectHideFlags: 0
@@ -8605,6 +8603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Krater(Droga) (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234154383950521056, guid: 9a275136dea175a42b1b0d42487af160,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1234154383950521070, guid: 9a275136dea175a42b1b0d42487af160,
         type: 3}
