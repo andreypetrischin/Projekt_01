@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4106543559499362652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983069477344866951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704cf3c289daa90469f158881af7054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6961381474403434977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41,6 +53,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 32390652374168441, guid: 41b6b828b05e8d5498eaab816a30ef99,
+        type: 3}
+      propertyPath: krater
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 32390652374168441, guid: 41b6b828b05e8d5498eaab816a30ef99,
         type: 3}
@@ -135,5 +152,16 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 32390652374168444, guid: 41b6b828b05e8d5498eaab816a30ef99,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b6b828b05e8d5498eaab816a30ef99, type: 3}
+--- !u!1 &6983069477344866951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 32390652374168422, guid: 41b6b828b05e8d5498eaab816a30ef99,
+    type: 3}
+  m_PrefabInstance: {fileID: 6961381474403434977}
+  m_PrefabAsset: {fileID: 0}

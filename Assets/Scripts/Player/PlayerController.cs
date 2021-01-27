@@ -55,12 +55,26 @@ public class PlayerController : MonoBehaviour
 
     void SpeedUp()
     {
+        if (!IsGrounded())
+        {
+            return;
+        }
+        else
+        {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(boost, 0f), ForceMode2D.Impulse);
+        }
     }
 
     void SpeedDown()
     {
+        if (!IsGrounded())
+        {
+            return;
+        }
+        else
+        {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-brake, 0f), ForceMode2D.Impulse);
+        }
     }
 
 

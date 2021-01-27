@@ -8,7 +8,7 @@ public class StartMenu : MonoBehaviour
 
     public void NewGameBtn( string newGameLevel)
     {
-        LiveScript.liveValue = 2;
+        LiveScript.liveValue = 4;
         ScoreScript.scoreValue = 0;
         AudioListener.volume = 1;
         SceneManager.LoadScene("SampleScene");

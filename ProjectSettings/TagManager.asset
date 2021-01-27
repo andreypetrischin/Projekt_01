@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Audio
   - Restart
+  - EnemyTyp3
   layers:
   - Default
   - TransparentFX

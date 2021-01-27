@@ -10,12 +10,10 @@ public class LevelManager : MonoBehaviour
     private PlayerController player;
     public bool CanPause;
 
-
-
-
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+       
 
     }
 
