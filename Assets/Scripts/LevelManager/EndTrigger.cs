@@ -27,8 +27,9 @@ public class EndTrigger : MonoBehaviour
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             player.enabled = false;
             backgroundAudio.SetActive(false);
+            Destroy(gameObject.GetComponent<ClockDigital>());
             gameManager.CompleteLevel(); // Complete Level start animation
-            LiveScript.liveValue += 1;
+         //   LiveScript.liveValue += 1; 
         }
     }
 

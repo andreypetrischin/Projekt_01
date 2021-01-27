@@ -11,7 +11,7 @@ public class RestartExit : MonoBehaviour
 
     public void NewGameBtn(string newGameLevel)
     {
-        LiveScript.liveValue = 2;
+        LiveScript.liveValue = 4;
         ScoreScript.scoreValue = 0;
         AudioListener.volume = 1;
         gameObject.SetActive(false);

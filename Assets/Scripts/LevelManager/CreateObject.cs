@@ -19,7 +19,6 @@ public class CreateObject : MonoBehaviour
         {
             Instantiate(Prefab, Spawnpoint.position, Quaternion.identity);
 
-            Destroy(gameObject);
         }
     }
 }

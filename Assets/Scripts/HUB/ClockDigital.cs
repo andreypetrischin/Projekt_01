@@ -7,16 +7,15 @@ public class ClockDigital : MonoBehaviour
 {
     public Text counterText;
 
-    public float seconds, minutes;
+    public float seconds;
+    public float minutes;
 
-    private void Start()
+    public void Start()
     {
         counterText = GetComponent<Text>() as Text;
 
     }
-
-
-    private void Update()
+    public void Update()
     {
         minutes = (int)(Time.time / 60f);
         seconds = (int)(Time.time % 60f);

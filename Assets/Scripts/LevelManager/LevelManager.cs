@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,9 +10,13 @@ public class LevelManager : MonoBehaviour
     private PlayerController player;
     public bool CanPause;
 
+
+
+
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+
     }
 
     void Update()
@@ -36,10 +41,12 @@ public class LevelManager : MonoBehaviour
         }
     }
     public void RespawnRoad()
-    {
-        this.player.transform.position = currentCheckpoint.transform.position;
-        Vector3 position = transform.position;
-        position.y = 0;
+        {
+            this.player.transform.position = currentCheckpoint.transform.position;
+            Vector3 position = transform.position;
+            position.y = 0;
+
+        
     } 
 }
    
